@@ -25,7 +25,8 @@ const EmpLogin = () => {
     };
 
     const response = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/employee/login`,
+      // `${import.meta.env.VITE_BASE_URL}/employee/login`,
+      `/api/v1/employee/login`,
       empLogin
     );
 
