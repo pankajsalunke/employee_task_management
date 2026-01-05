@@ -1,5 +1,4 @@
 import {Task} from "../../models/tasks.model.js";
-import {Employee} from "../../models/employee.model.js";
 
 const getEmployeeProfile = async (req, res) => {
   res.status(200).json(req.employee);
@@ -41,23 +40,22 @@ const empLogout = async (req, res) => {
   res.status(200).json({message: "logged out"});
 };
 
-const getTaskById = async (req,res) => {
+const getTaskById = async (req, res) => {
   try {
     const taskId = req.params.taskId;
 
     const task = await Task.findById(taskId)
-      .populate("assignedTo", "fullname email")  // populate employee info
+      .populate("assignedTo", "fullname email") // populate employee info
       .populate("assignedBy", "fullname email"); // populate admin info
 
     if (!task) {
-      return res.status(404).json({ message: "Task not found" });
+      return res.status(404).json({message: "Task not found"});
     }
 
     res.status(200).json(task);
   } catch (error) {
-    res.status(500).json({ message: "Server error", error });
+    res.status(500).json({message: "Server error", error});
   }
-}
-
+};
 
 export {getEmployeeTasks, getEmployeeProfile, empLogout, getTaskById};

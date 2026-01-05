@@ -44,8 +44,6 @@ const adminRegistration = async (req, res) => {
   }
 };
 
-// create admin login functionality login functionality here
-
 const adminLogin = async (req, res) => {
   const {email, password} = req.body;
 
