@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
-import AdminForm from "./AdminForm";
-import AdminTaskTable from "./AdminTaskTable";
+
 import {Link} from "react-router-dom";
 import AdminStartPage from "./AdminStartPage";
 
@@ -15,7 +14,7 @@ const AdminDash = () => {
       try {
         const res = await axios.get(
           `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
-          {headers: {Authorization: `Bearer ${admintoken}`}}
+          {headers: {Authorization: `Bearer ${admintoken}`}},
         );
         setProfile(res.data);
       } catch (err) {
@@ -61,8 +60,6 @@ const AdminDash = () => {
       <div>
         <AdminStartPage />
       </div>
-      {/* <AdminForm setRelod={setRelod} /> */}
-      {/* <AdminTaskTable relod={relod} setRelod={setRelod} /> */}
     </div>
   );
 };
