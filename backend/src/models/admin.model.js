@@ -29,7 +29,7 @@ const AdminSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["employee", "admin"],
+      enum: ["admin"],
       required: true,
     },
     password: {
@@ -39,7 +39,7 @@ const AdminSchema = new mongoose.Schema(
       minlength: [5, "Passwor must be at least 5 charecter long"],
     },
   },
-  {timestamps: true}
+  {timestamps: true},
 );
 
 AdminSchema.pre("save", async function (next) {
@@ -68,7 +68,7 @@ AdminSchema.methods.generateToken = function () {
     process.env.ACCESS_TOKEN_SECRATE,
     {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-    }
+    },
   );
 };
 

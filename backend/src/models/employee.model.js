@@ -37,9 +37,14 @@ const EmployeeSchema = new mongoose.Schema(
       trim: true,
       minlength: [5, "Passwor must be at least 5 charecter long"],
     },
-    
+    taskNumbers: {
+      active: {type: Number, default: 0},
+      newTask: {type: Number, default: 0},
+      completed: {type: Number, default: 0},
+      failed: {type: Number, default: 0},
+    },
   },
-  {timestamps: true}
+  {timestamps: true},
 );
 
 EmployeeSchema.pre("save", async function (next) {
@@ -68,7 +73,7 @@ EmployeeSchema.methods.generateToken = function () {
     process.env.ACCESS_TOKEN_SECRATE,
     {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-    }
+    },
   );
 };
 

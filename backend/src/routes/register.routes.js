@@ -9,4 +9,3 @@ router.route("/register").post(userRegister);
 router.route("/admin").post(adminRegistration);
 
 export default router;
- 
