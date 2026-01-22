@@ -15,7 +15,7 @@ const AdminLogin = () => {
     reset,
     formState: {errors},
   } = useForm();
-
+ console.log(import.meta.env.VITE_BASE_URL);
   const onsubmit = async (data) => {
     const adminLogin = {
       email: data.email,
@@ -31,6 +31,7 @@ const AdminLogin = () => {
       const data = response.data;
       setAdmin(data.admin);
       localStorage.setItem("admintoken", data.admintoken);
+       console.log(import.meta.env.VITE_BASE_URL);
       navigate("/admin-home");
     }
 

@@ -21,7 +21,7 @@ const AdminDash = () => {
         console.error("Error fetching admin profile", err);
       }
     };
-    console.log("url::", import.meta.env.VITE_BASE_URL);
+
     fetchProfile();
   }, [relod]);
 
