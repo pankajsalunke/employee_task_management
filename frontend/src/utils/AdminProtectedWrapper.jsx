@@ -16,7 +16,7 @@ const AdminProtectedWrapper = ({children}) => {
     }
 
     axios
-      .get(`${import.meta.env.VITE_BASE_UR}/admin/admin-profile`, {
+      .get(`${import.meta.env.VITE_BASE_URL}/admin/admin-profile`, {
         headers: {
           Authorization: `Bearer ${admintoken}`,
         },
