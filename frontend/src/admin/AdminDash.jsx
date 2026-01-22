@@ -6,29 +6,29 @@ import AdminStartPage from "./AdminStartPage";
 
 const AdminDash = () => {
   const [profile, setProfile] = useState({});
-  const [relod, setRelod] = useState(false);
+
   const admintoken = localStorage.getItem("admintoken");
 
-useEffect(() => {
-  if (!admintoken) return;
+  useEffect(() => {
+    if (!admintoken) return;
 
-  const fetchProfile = async () => {
-    try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
-        {
-          headers: { Authorization: `Bearer ${admintoken}` },
-          withCredentials: true,
-        }
-      );
-      setProfile(res.data);
-    } catch (err) {
-      console.error("Error fetching admin profile", err);
-    }
-  };
+    const fetchProfile = async () => {
+      try {
+        const res = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
+          {
+            headers: {Authorization: `Bearer ${admintoken}`},
+            withCredentials: true,
+          },
+        );
+        setProfile(res.data);
+      } catch (err) {
+        console.error("Error fetching admin profile", err);
+      }
+    };
 
-  fetchProfile();
-}, []);
+    fetchProfile();
+  }, []);
 
   return (
     <div className="space-y-8">

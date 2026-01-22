@@ -1,5 +1,5 @@
 // src/pages/AllTasksPage.jsx
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import AllTasks from "./AllTasks";
 import {ArrowLeftIcon, ArrowRightIcon} from "@heroicons/react/24/outline";

@@ -1,4 +1,3 @@
-import React from "react";
 import AdminDash from "../admin/AdminDash";
 
 const AdminHome = () => {
