@@ -6,9 +6,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://employee-task-management-67gu.onrender.com",
+    origin: [
+      "http://localhost:5173",
+      "https://employee-task-management-rosy.vercel.app"
+    ],
     credentials: true,
-  }),
+  })
 );
 
 app.use(express.json({limit: "16kb"}));

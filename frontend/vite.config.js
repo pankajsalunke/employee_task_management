@@ -4,13 +4,5 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    host: "0.0.0.0",
-    port: process.env.PORT || 5173,
-
-    proxy: {
-      "/api": "https://employee-task-management-67gu.onrender.com",
-    },
-  },
   plugins: [react(), tailwindcss()],
 });
