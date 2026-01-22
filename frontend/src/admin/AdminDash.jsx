@@ -10,8 +10,10 @@ const AdminDash = () => {
   const admintoken = localStorage.getItem("admintoken");
 
   useEffect(() => {
+    console.log(import.meta.env.VITE_BASE_URL);
     const fetchProfile = async () => {
       try {
+        console.log(import.meta.env.VITE_BASE_URL);
         const res = await axios.get(
           `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
           {headers: {Authorization: `Bearer ${admintoken}`}},
