@@ -9,23 +9,26 @@ const AdminDash = () => {
   const [relod, setRelod] = useState(false);
   const admintoken = localStorage.getItem("admintoken");
 
-  useEffect(() => {
-    console.log(import.meta.env.VITE_BASE_URL);
-    const fetchProfile = async () => {
-      try {
-        console.log(import.meta.env.VITE_BASE_URL);
-        const res = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
-          {headers: {Authorization: `Bearer ${admintoken}`}},
-        );
-        setProfile(res.data);
-      } catch (err) {
-        console.error("Error fetching admin profile", err);
-      }
-    };
+useEffect(() => {
+  if (!admintoken) return;
 
-    fetchProfile();
-  }, [relod]);
+  const fetchProfile = async () => {
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
+        {
+          headers: { Authorization: `Bearer ${admintoken}` },
+          withCredentials: true,
+        }
+      );
+      setProfile(res.data);
+    } catch (err) {
+      console.error("Error fetching admin profile", err);
+    }
+  };
+
+  fetchProfile();
+}, []);
 
   return (
     <div className="space-y-8">
@@ -34,7 +37,7 @@ const AdminDash = () => {
           <h1 className="text-2xl sm:text-3xl font-bold">
             Hello{" "}
             <span className="text-green-400">
-              {profile.firstname || "Admin"} 👋
+              {profile?.fullname?.firstname || "Admin"} 👋
             </span>
           </h1>
         </div>
