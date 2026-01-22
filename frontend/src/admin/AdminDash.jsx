@@ -12,7 +12,6 @@ const AdminDash = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        console.log("url::",import.meta.env.VITE_BASE_URL)
         const res = await axios.get(
           `${import.meta.env.VITE_BASE_URL}/admin/admin-profile`,
           {headers: {Authorization: `Bearer ${admintoken}`}},
@@ -22,7 +21,7 @@ const AdminDash = () => {
         console.error("Error fetching admin profile", err);
       }
     };
-
+    console.log("url::", import.meta.env.VITE_BASE_URL);
     fetchProfile();
   }, [relod]);
 
