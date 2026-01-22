@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://employee-task-management-rosy.vercel.app/",
+    origin: "https://employee-task-management-67gu.onrender.com",
     credentials: true,
   }),
 );
