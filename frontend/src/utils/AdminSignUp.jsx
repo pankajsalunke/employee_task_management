@@ -26,7 +26,7 @@ const AdminSignUp = () => {
       dept: data.dept,
     };
     const response = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/register/admin`,
+      `${import.meta.env.VITE_BASE_URL}/admin/register/admin`,
       adminInfo
     );
 
