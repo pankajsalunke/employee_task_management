@@ -44,7 +44,7 @@ const EmpRegistration = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center ">
-      <h2 className="text-3xl font-bold ">Employee Registration</h2>
+      <h2 className="text-3xl font-bold mt-6 ">Employee Registration</h2>
       <div className="w-full max-w-lg p-6 bg-white shadow-md rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">

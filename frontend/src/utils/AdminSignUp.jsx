@@ -42,7 +42,7 @@ const AdminSignUp = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
-      <h2 className="text-3xl font-bold mb-6">Admin Registration</h2>
+      <h2 className="text-3xl font-bold mb-4 mt-6">Admin Registration</h2>
       <div className="w-full max-w-lg p-6 bg-white shadow-md rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
