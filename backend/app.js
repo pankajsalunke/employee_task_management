@@ -9,7 +9,7 @@ app.use(
     origin: [
       // "http://localhost:5173",
       "https://employee-task-management-pearl.vercel.app",
-      "https://employee-task-management-rosy.vercel.app",
+      
     ],
     credentials: true,
   }),

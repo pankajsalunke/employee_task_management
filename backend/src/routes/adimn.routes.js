@@ -5,14 +5,18 @@ import {
   adminLogout,
   getAdminProfile,
 } from "../controller/admin.controller.js/adminRegistration.js";
+import {adminRegistration} from "../controller/admin.controller.js/adminRegistration.js";
+
 import {verifyAdmin} from "../middleware/checkAdmin.js";
 
 const router = Router();
+
+router.route("/register/admin").post(adminRegistration);
 
 router.route("/login").post(adminLogin);
 
 router.route("/admin-profile").get(verifyAdmin, getAdminProfile);
 
-router.route("/logout").get(verifyAdmin, adminLogout );
+router.route("/logout").get(verifyAdmin, adminLogout);
 
 export default router;
