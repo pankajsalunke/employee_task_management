@@ -25,9 +25,8 @@ const EmpLogin = () => {
     };
 
     const response = await axios.post(
-      // `${import.meta.env.VITE_BASE_URL}/employee/login`,
-      `/api/v1/employee/login`,
-      empLogin
+      `${import.meta.env.VITE_BASE_URL}/employee/login`,
+      empLogin,
     );
 
     if (response.status === 200) {

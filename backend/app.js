@@ -7,11 +7,12 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://employee-task-management-rosy.vercel.app"
+      // "http://localhost:5173",
+      "https://employee-task-management-pearl.vercel.app",
+      "https://employee-task-management-rosy.vercel.app",
     ],
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json({limit: "16kb"}));
