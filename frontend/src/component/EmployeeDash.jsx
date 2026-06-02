@@ -95,14 +95,14 @@ const EmployeeDash = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <Card
-              color="blue"
+              color="bg-blue-500"
               label="Active Tasks"
               value="active"
               count={profile?.taskNumbers?.active || 0}
               onClick={handleCardClick}
             />
             <Card
-              color="green"
+              color="bg-green-500"
               label="Completed Tasks"
               value="completed"
               count={profile?.taskNumbers?.completed || 0}
@@ -156,7 +156,7 @@ const EmployeeDash = () => {
 const Card = ({color, label, count, value, onClick}) => {
   return (
     <div
-      className={`bg-${color}-500 text-white p-5 sm:p-6 rounded-lg shadow transition transform hover:scale-105`}
+      className={`${color} text-white p-5 sm:p-6 rounded-lg shadow transition transform hover:scale-105`}
     >
       <h2
         className="text-base sm:text-lg font-medium cursor-pointer"
