@@ -109,14 +109,14 @@ const EmployeeDash = () => {
               onClick={handleCardClick}
             />
             <Card
-              color="yellow"
+              color="bg-yellow-500"
               label="New Tasks"
               value="newTask"
               count={profile?.taskNumbers?.newTask || 0}
               onClick={handleCardClick}
             />
             <Card
-              color="red"
+              color="bg-red-500"
               label="Failed Tasks"
               value="failed"
               count={profile?.taskNumbers?.failed || 0}
